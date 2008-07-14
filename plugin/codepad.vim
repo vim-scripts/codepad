@@ -13,7 +13,7 @@
 "
 " The correct filetype is automatically detected from the 'filetype' variable.
 "
-" Version:      1.0
+" Version:      1.1
 " Last Change:  14 jul 2008
 " Maintainer:   Nicolas Weber <nicolasweber at gmx.de>
 
@@ -44,7 +44,7 @@ def codepadGet(run):
 
   url = 'http://codepad.org'
   data = {
-    'code':''.join(vim.current.buffer),
+    'code':'\n'.join(vim.current.buffer),
     'lang':codepadLang(vim.eval('&filetype')),
     'submit':'Submit'
   }
