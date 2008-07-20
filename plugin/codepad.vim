@@ -13,13 +13,20 @@
 "
 " The correct filetype is automatically detected from the 'filetype' variable.
 "
-" Version:      1.1
-" Last Change:  14 jul 2008
+" Version:      1.2
+" Last Change:  20 jul 2008
 " Maintainer:   Nicolas Weber <nicolasweber at gmx.de>
 
-command! CPPaste python codepadPaste()
-command! CPRun python codepadRun()
 
+if has('python')
+  command! CPPaste python codepadPaste()
+  command! CPRun python codepadRun()
+else
+  command! CPPaste echo 'Only avaliable with +python support.'
+  command! CPRun echo 'Only avaliable with +python support.'
+endif
+
+if has('python')
 python << EOF
 def codepadLang(vimLang):
   filetypeMap = {
@@ -64,3 +71,4 @@ def codepadRun():
   import webbrowser
   webbrowser.open(url)
 EOF
+endif
