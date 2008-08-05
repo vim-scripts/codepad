@@ -13,8 +13,8 @@
 "
 " The correct filetype is automatically detected from the 'filetype' variable.
 "
-" Version:      1.2
-" Last Change:  20 jul 2008
+" Version:      1.3
+" Last Change:  05 aug 2008
 " Maintainer:   Nicolas Weber <nicolasweber at gmx.de>
 
 
@@ -63,11 +63,17 @@ def codepadGet(run):
 
 def codepadPaste():
   url = codepadGet(run=False)
+  import vim
+  vim.command("call setreg('+', '%s')" % url)
+  vim.command("call setreg('*', '%s')" % url)
   import webbrowser
   webbrowser.open(url)
 
 def codepadRun():
   url = codepadGet(run=True)
+  import vim
+  vim.command("call setreg('+', '%s')" % url)
+  vim.command("call setreg('*', '%s')" % url)
   import webbrowser
   webbrowser.open(url)
 EOF
