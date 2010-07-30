@@ -13,8 +13,8 @@
 "
 " The correct filetype is automatically detected from the 'filetype' variable.
 "
-" Version:      1.3
-" Last Change:  05 aug 2008
+" Version:      1.4
+" Last Change:  30 jul 2010
 " Maintainer:   Nicolas Weber <nicolasweber at gmx.de>
 
 
@@ -35,7 +35,7 @@ def codepadLang(vimLang):
     'd':'D',
     'haskell':'Haskell',
     'lua':'Lua',
-    'ocaml':'Ocaml',
+    'ocaml':'OCaml',
     'php':'PHP',
     'perl':'Perl',
     'python':'Python',
